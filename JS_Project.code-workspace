@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Documents/M3/JS/JAVASCRIPT/START CODE/views/edit"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "JS_Project"
+	}
+}
