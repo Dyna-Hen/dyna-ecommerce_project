@@ -20,9 +20,10 @@
 
 // pppp
 // DOMS ELEMENTS  ---------------------------------------------------------
-const product_veiw = document.querySelector("#product-view");
-const add_product_form = document.querySelector("#product-dialog");
+const product_veiw = document.querySelector("#table");
+let add_product_form = document.getElementById("product-dialog");
 let product_container = document.getElementById('product-list');
+let createEditButton =document.getElementById("createEditButton");
 
 let product = [
   {
@@ -42,12 +43,16 @@ let product = [
     price: 85,
   }
 ];
-let storePro = JSON.stringify(product);
-localStorage.setItem("product",storePro);
-storePro = JSON.parse(localStorage.getItem("product"));
+// let storePro = JSON.stringify(product);
+// localStorage.setItem("product",storePro);
+// storePro = JSON.parse(localStorage.getItem("product"));
 
 function show(element) {
   element.style.display = "block";
+}
+
+function hide(element) {
+  element.style.display = "none";
 }
 
 function saveProduct() {
@@ -63,17 +68,35 @@ function loadProduct() {
 }
 
 function renderProduct(){
+  newcontainer = document.getElementById("product-list");
+  newcontainer.remove();
+  newcontainer = document.createElement("div");
+  newcontainer.id = "product-list";
+  product_veiw.appendChild(newcontainer);
+
   for (let pro of product){
+
     let tr = document.createElement("tr");
+
     let td1 = document.createElement("td");
     td1.textContent = pro.name;
+    
+    // add
+    // productContainer.appendChild()
     let td2 = document.createElement("td");
     td2.textContent = pro.price;
     
     let td3 = document.createElement("td");
+
     let deletebtt = document.createElement("button");
+    deletebtt.id = "deletebtt";
+    deletebtt.addEventListener("click", removebtt)
     deletebtt.textContent = "Delete";
+    
+
     let editbtt = document.createElement("button");
+    editbtt.id = "editbtt";
+    editbtt.addEventListener("click", editbtt)
     editbtt.textContent = "Edit";
     
     td3.appendChild(deletebtt);
@@ -82,22 +105,54 @@ function renderProduct(){
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
-    product_container.appendChild(tr)
+    newcontainer.appendChild(tr)
   }
 }
 
 function Addproduct() {
-  let name = doc.value-from-input;
-  let price = doc.value-from-input;
-  let item =  {
-    name: name,
-    price: price,
-  }
+  let pro = null;
+  show(add_product_form);
+  // let name = document.getElementById("proname").value;
+  // let price = doc.value-from-input;
+  // let item =  {
+  //   name: name,
+  //   price: price,
+  // }
 
-  product.append(item);
-  saveProduct();
+  // product.append(item);
+  // saveProduct();
 }
-saveProduct();
+function removebtt(event) {
+  let index = event.target.parentElement.parentElement.dataset.index;
+  product.splice(index, 1);
+  saveProduct();
+  renderProduct();
+}
+
+function Cancel(e) {
+  hide(add_product_form);
+}
+
+function editbtt(event) {
+  productToedit = event.target.parentElement.parentElement.dataset.index;
+  console.log(productToedit);
+}
+function Create() {
+  hide(add_product_form);
+
+  let newproduct = {};
+  newproduct.name = document.getElementById("proname").value;
+  newproduct.price = document.getElementById("price").value;
+  product.push(newproduct);
+
+
+  saveProduct();
+  renderProduct();
+}
+
+
+
+// saveProduct();
 loadProduct();
 renderProduct();
 

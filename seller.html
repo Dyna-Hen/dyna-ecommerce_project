@@ -8,11 +8,30 @@
     <link rel="stylesheet" href="css-two/style-two.css">
 </head>
 <body>
+  <div id="product-dialog" style="display: none">
+    <dialog open>
+
+      <div class="title">Create new Product</div>
+        <label for="proname">Product Name</label><br>
+        <input type="text" id="proname"><br>
+        <label for="price">Price</label><br>
+        <input type="text" id="price"><br>
+
+      <menu>
+        <button onclick="Cancel()">Cancel</button>
+        <button id="createEditButton" onclick="Create()">Create</button>
+      </menu>
+    </dialog>
+  </div>
+
+
+
+
   <div id="product-view">
     <button onclick="Addproduct()">Add Product</button>
 
-    <div id="product-container">
-      <table style="border: 1px solid;" >
+    <!-- <div id="product-container"> -->
+      <table style="border: 1px solid;" id="table" >
         <thead>
           <tr>
             <th>Product name</th>
@@ -24,7 +43,7 @@
         
       </tbody>
     </table>
-    </div>
+    <!-- </div> -->
   </div>
    
 
