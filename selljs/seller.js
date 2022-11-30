@@ -31,6 +31,7 @@ let product = [
     price: 85,
   },
   {
+    
     name: "hoodie",
     price: 5,
   },
@@ -46,6 +47,7 @@ let product = [
 // let storePro = JSON.stringify(product);
 // localStorage.setItem("product",storePro);
 // storePro = JSON.parse(localStorage.getItem("product"));
+let productToedit = null;
 
 function show(element) {
   element.style.display = "block";
@@ -70,17 +72,58 @@ function loadProduct() {
 function renderProduct(){
   newcontainer = document.getElementById("product-list");
   newcontainer.remove();
-  newcontainer = document.createElement("div");
+  newcontainer = document.createElement("tbody");
   newcontainer.id = "product-list";
   product_veiw.appendChild(newcontainer);
 
-  for (let pro of product){
+  // for (let pro of product){
+
+  //   let tr = document.createElement("tr");
+
+  //   let td1 = document.createElement("td");
+  //   td1.textContent = pro.name;
+
+  //   let tdN = document.createElement("td");
+  //   tdN.textContent = pro.nblist;
+  //   // add
+  //   // productContainer.appendChild()
+  //   let td2 = document.createElement("td");
+  //   td2.textContent = pro.price;
+    
+  //   let td3 = document.createElement("td");
+
+  //   let deletebtt = document.createElement("button");
+  //   deletebtt.id = "deletebtt";
+  //   deletebtt.addEventListener("click", removebtt)
+  //   deletebtt.textContent = "Delete";
+    
+
+  //   let editbtt = document.createElement("button");
+  //   editbtt.id = "editbtt";
+  //   editbtt.addEventListener("click", editButton)
+  //   editbtt.textContent = "Edit";
+    
+  //   td3.appendChild(deletebtt);
+  //   td3.appendChild(editbtt);
+
+  //   tr.appendChild(tdN);
+  //   tr.appendChild(td1);
+  //   tr.appendChild(td2);
+  //   tr.appendChild(td3);
+  //   newcontainer.appendChild(tr)
+  // }
+  // document.body.appendChild(newcontainer)
+  for (let index = 0; index < product.length; index++){
+    let pro = product[index];
 
     let tr = document.createElement("tr");
+    tr.dataset.index = index;
 
     let td1 = document.createElement("td");
     td1.textContent = pro.name;
-    
+
+    let tdN = document.createElement("td");
+    tdN.textContent = pro.nblist;
     // add
     // productContainer.appendChild()
     let td2 = document.createElement("td");
@@ -96,18 +139,20 @@ function renderProduct(){
 
     let editbtt = document.createElement("button");
     editbtt.id = "editbtt";
-    editbtt.addEventListener("click", editbtt)
+    editbtt.addEventListener("click", editButton)
     editbtt.textContent = "Edit";
     
     td3.appendChild(deletebtt);
     td3.appendChild(editbtt);
 
+    tr.appendChild(tdN);
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
     newcontainer.appendChild(tr)
   }
-}
+  }
+
 
 function Addproduct() {
   let pro = null;
@@ -124,25 +169,30 @@ function Addproduct() {
 }
 function removebtt(event) {
   let index = event.target.parentElement.parentElement.dataset.index;
+  console.log(index)
   product.splice(index, 1);
   saveProduct();
   renderProduct();
 }
-
+renderProduct()
 function Cancel(e) {
   hide(add_product_form);
 }
 
-function editbtt(event) {
-  productToedit = event.target.parentElement.parentElement.dataset.index;
-  console.log(productToedit);
+function editButton(event) {
+  productToedit = event.target.dataset.index;
+
+  show(add_product_form);
 }
+
 function Create() {
   hide(add_product_form);
 
   let newproduct = {};
   newproduct.name = document.getElementById("proname").value;
   newproduct.price = document.getElementById("price").value;
+  newproduct.nblist = document.getElementById("nblist").value;
+
   product.push(newproduct);
 
 

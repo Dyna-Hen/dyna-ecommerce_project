@@ -12,13 +12,15 @@
     <dialog open>
 
       <div class="title">Create new Product</div>
+        <label for="number">Number list</label><br>
+        <input type="text" id="nblist"><br>
         <label for="proname">Product Name</label><br>
         <input type="text" id="proname"><br>
         <label for="price">Price</label><br>
         <input type="text" id="price"><br>
 
       <menu>
-        <button onclick="Cancel()">Cancel</button>
+        <button onclick="Cancel()" id="cancelBttColor">Cancel</button>
         <button id="createEditButton" onclick="Create()">Create</button>
       </menu>
     </dialog>
@@ -28,12 +30,13 @@
 
 
   <div id="product-view">
-    <button onclick="Addproduct()">Add Product</button>
+    <button onclick="Addproduct()" id="addBttColor">Add Product</button>
 
     <!-- <div id="product-container"> -->
-      <table style="border: 1px solid;" id="table" >
+      <table style="border: 1px solid" id="table">
         <thead>
           <tr>
+            <th>Number</th>
             <th>Product name</th>
             <th>Price</th>
             <th>Actions</th>
