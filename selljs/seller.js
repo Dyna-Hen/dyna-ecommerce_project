@@ -5,28 +5,6 @@ let add_product_form = document.getElementById("product-dialog");
 let product_container = document.getElementById('product-list');
 let createEditButton =document.getElementById("createEditButton");
 
-let product = [
-  {
-    name: "hoodie",
-    price: 85,
-  },
-  {
-    
-    name: "hoodie",
-    price: 5,
-  },
-  {
-    name: "hoodie",
-    price: 85,
-  },
-  {
-    name: "T-shirt",
-    price: 85,
-  }
-];
-// let storePro = JSON.stringify(product);
-// localStorage.setItem("product",storePro);
-// storePro = JSON.parse(localStorage.getItem("product"));
 let productToedit = null;
 
 function show(element) {
@@ -46,10 +24,12 @@ function loadProduct() {
   if (itemStorage !== null) {
     product = itemStorage;
   }
-  // console.log(itemStorage)
 }
 
 function renderProduct(){
+  loadProduct()
+  saveProduct()
+
   newcontainer = document.getElementById("product-list");
   newcontainer.remove();
   newcontainer = document.createElement("tbody");
@@ -63,13 +43,14 @@ function renderProduct(){
     let tr = document.createElement("tr");
     tr.dataset.index = index;
 
+    // add
+    let img =  document.createElement("img");
+    img.src = pro.img;
+    img.className = "img";
+
     let td1 = document.createElement("td");
     td1.textContent = pro.name;
 
-    let tdN = document.createElement("td");
-    tdN.textContent = pro.nblist;
-    // add
-    // productContainer.appendChild()
     let td2 = document.createElement("td");
     td2.textContent = pro.price;
     
@@ -89,14 +70,13 @@ function renderProduct(){
     td3.appendChild(deletebtt);
     td3.appendChild(editbtt);
 
-    tr.appendChild(tdN);
+    tr.appendChild(img);
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
     newcontainer.appendChild(tr)
   }
 }
-
 
 function Addproduct() {
   let pro = null;
@@ -111,19 +91,20 @@ function removebtt(event) {
   renderProduct();
 }
 renderProduct()
+
 function Cancel(e) {
   hide(add_product_form);
 }
 
 function editButton(event) {
   productToedit = event.target.parentElement.parentElement.dataset.index;
-  // productToedit.parseInt(productToedit);
-  // console.log(productToedit)
+
   let editpro = product[productToedit];
 
+  document.getElementById("img").value = editpro.img;
   document.getElementById("proname").value = editpro.name;
   document.getElementById("price").value = editpro.price;
-
+ 
   show(add_product_form);
 }
 
@@ -131,14 +112,18 @@ function Create() {
   hide(add_product_form);
  if (productToedit !== null) {
   let editproduct = product[productToedit];
+  
+  editproduct.img = document.getElementById("img").value;
   editproduct.name = document.getElementById("proname").value;
   editproduct.price = document.getElementById("price").value;
 
+
  } else{
   let newproduct = {};
+  newproduct.img = document.getElementById("img").value;
   newproduct.name = document.getElementById("proname").value;
   newproduct.price = document.getElementById("price").value;
-  newproduct.nblist = document.getElementById("nblist").value;
+ 
   product.push(newproduct);
 
  }
@@ -147,9 +132,7 @@ function Create() {
   renderProduct();
 }
 
-
-
-// saveProduct();
+saveProduct();
 loadProduct();
 renderProduct();
 

@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="css-two/style-two.css">
 </head>
 <body>
+  <nav>
+    <h3>LIST OF PRODUCT</h3>
+  </nav>
   <div id="product-dialog" style="display: none">
     <dialog open>
 
       <div class="title">Create new Product</div>
-        <label for="number">Number list</label><br>
-        <input type="text" id="nblist"><br>
+        <label for="img">Image</label><br>
+        <input type="text" id="img"><br>
         <label for="proname">Product Name</label><br>
         <input type="text" id="proname"><br>
         <label for="price">Price</label><br>
@@ -26,9 +29,6 @@
     </dialog>
   </div>
 
-
-
-
   <div id="product-view">
     <button onclick="Addproduct()" id="addBttColor">Add Product</button>
 
@@ -36,7 +36,7 @@
       <table style="border: 1px solid" id="table">
         <thead>
           <tr>
-            <th>Number</th>
+            <th>Image</th>
             <th>Product name</th>
             <th>Price</th>
             <th>Actions</th>
