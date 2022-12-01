@@ -48,17 +48,27 @@ function render_product(){
     let container = document.createElement("div");
     container .className = "container";
   
-    let name_pro = document.createElement("h4");
+    let name_pro = document.createElement("h2");
     name_pro.className = "name";
     name_pro.textContent = p.name;
 
     let price = document.createElement("p");
     price.textContent = p.price;
 
- 
-    container.appendChild(name_pro);
+    //create button
+    let div_btt = document.createElement("div");
+    div_btt.className = "divbtt";
+
+    let buy_button = document.createElement("button");
+    buy_button.textContent = "Buy Now";
+    buy_button.className = "buybutton";
+    
     card.appendChild(img);
+    container.appendChild(name_pro);
     container.appendChild(price);
+    div_btt.appendChild(buy_button);
+    container.appendChild(div_btt);
+   
     card.appendChild(container);
     
     card_container.appendChild(card);

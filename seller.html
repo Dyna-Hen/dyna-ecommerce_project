@@ -15,12 +15,21 @@
     <dialog open>
 
       <div class="title">Create new Product</div>
+
         <label for="img">Image</label><br>
         <input type="text" id="img"><br>
+
         <label for="proname">Product Name</label><br>
         <input type="text" id="proname"><br>
+
+        <label for="description">description</label><br>
+        <input type="text" id="description"><br>
+
         <label for="price">Price</label><br>
         <input type="text" id="price"><br>
+
+        <label for="currency">currency</label><br>
+        <input type="text" id="currency"><br>
 
       <menu>
         <button onclick="Cancel()" id="cancelBttColor">Cancel</button>
@@ -32,13 +41,14 @@
   <div id="product-view">
     <button onclick="Addproduct()" id="addBttColor">Add Product</button>
 
-    <!-- <div id="product-container"> -->
       <table style="border: 1px solid" id="table">
         <thead>
           <tr>
             <th>Image</th>
             <th>Product name</th>
+            <th>Description</th>
             <th>Price</th>
+            <th>Currency</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -46,7 +56,7 @@
         
       </tbody>
     </table>
-    <!-- </div> -->
+    
   </div>
    
 

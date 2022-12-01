@@ -50,10 +50,21 @@ function renderProduct(){
 
     let td1 = document.createElement("td");
     td1.textContent = pro.name;
-
+    // td1.className = "name";
+    //add
+    let description =  document.createElement("td");
+    description.textContent = pro.description;
+    description.className = "description";
+    
     let td2 = document.createElement("td");
     td2.textContent = pro.price;
+    // td2.className = "price";
     
+    //add
+    let currency =  document.createElement("td");
+    currency.textContent = pro.currency;
+    // currency.className = "currency";
+
     let td3 = document.createElement("td");
 
     let deletebtt = document.createElement("button");
@@ -61,7 +72,6 @@ function renderProduct(){
     deletebtt.addEventListener("click", removebtt)
     deletebtt.textContent = "Delete";
     
-
     let editbtt = document.createElement("button");
     editbtt.id = "editbtt";
     editbtt.addEventListener("click", editButton)
@@ -72,7 +82,9 @@ function renderProduct(){
 
     tr.appendChild(img);
     tr.appendChild(td1);
+    tr.appendChild(description);
     tr.appendChild(td2);
+    tr.appendChild(currency);
     tr.appendChild(td3);
     newcontainer.appendChild(tr)
   }
@@ -103,8 +115,10 @@ function editButton(event) {
 
   document.getElementById("img").value = editpro.img;
   document.getElementById("proname").value = editpro.name;
+  document.getElementById("description").value = editpro.description;
   document.getElementById("price").value = editpro.price;
- 
+  document.getElementById("currency").value = editpro.currency;
+
   show(add_product_form);
 }
 
@@ -115,15 +129,19 @@ function Create() {
   
   editproduct.img = document.getElementById("img").value;
   editproduct.name = document.getElementById("proname").value;
+  editproduct.description = document.getElementById("description").value;
   editproduct.price = document.getElementById("price").value;
+  editproduct.currency = document.getElementById("currency").value;
 
 
  } else{
   let newproduct = {};
   newproduct.img = document.getElementById("img").value;
   newproduct.name = document.getElementById("proname").value;
+  newproduct.description = document.getElementById("description").value;
   newproduct.price = document.getElementById("price").value;
- 
+  newproduct.currency = document.getElementById("currency").value;
+  
   product.push(newproduct);
 
  }
