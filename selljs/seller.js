@@ -43,29 +43,26 @@ function renderProduct(){
     let tr = document.createElement("tr");
     tr.dataset.index = index;
 
-    // add
     let img =  document.createElement("img");
     img.src = pro.img;
     img.className = "img";
 
     let td1 = document.createElement("td");
     td1.textContent = pro.name;
-    // td1.className = "name";
-    //add
+  
     let description =  document.createElement("td");
     description.textContent = pro.description;
     description.className = "description";
     
     let td2 = document.createElement("td");
     td2.textContent = pro.price;
-    // td2.className = "price";
     
-    //add
     let currency =  document.createElement("td");
     currency.textContent = pro.currency;
-    // currency.className = "currency";
+    
 
     let td3 = document.createElement("td");
+    td3.className = "button";
 
     let deletebtt = document.createElement("button");
     deletebtt.id = "deletebtt";
@@ -123,6 +120,7 @@ function editButton(event) {
 }
 
 function Create() {
+  
   hide(add_product_form);
  if (productToedit !== null) {
   let editproduct = product[productToedit];
@@ -132,7 +130,6 @@ function Create() {
   editproduct.description = document.getElementById("description").value;
   editproduct.price = document.getElementById("price").value;
   editproduct.currency = document.getElementById("currency").value;
-
 
  } else{
   let newproduct = {};
@@ -145,14 +142,41 @@ function Create() {
   product.push(newproduct);
 
  }
-  
+
+ let byname = product.sort((a, b) => {
+  if (a.name < b.name) return -1;
+  return 1;
+})
+
+let sort_name_btt = document.querySelector(".sort-name");
+sort_name_btt.addEventListener("click", get);
+
+function get() {
+ byname();
+}
   saveProduct();
   renderProduct();
 }
 
+
+
+
+
+
+
+
+
 saveProduct();
 loadProduct();
 renderProduct();
+
+
+
+
+
+
+
+
 
 
 
