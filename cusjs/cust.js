@@ -14,8 +14,6 @@ function hide(element) {
 function show(element) {
   element.style.display = "block";
 }
-// saveProduct() 
-// loadProduct()
 
 let picView = document.getElementById("pic-view");
 let picDetail = document.getElementById("pic-detail");
@@ -51,7 +49,6 @@ function render_product(){
     card .className = "card";
   
     let img = document.createElement("img");
-     // add
     img.dataset.index = index;
     img.addEventListener("click", getPicIndex);
 
@@ -66,9 +63,8 @@ function render_product(){
     name_pro.textContent = p.name;
 
     let price = document.createElement("p");
-    price.textContent = p.price;
+    price.textContent = p.price + p.currency;
 
-    //create button
     let div_btt = document.createElement("div");
     div_btt.className = "divbtt";
 
@@ -85,31 +81,39 @@ function render_product(){
     card.appendChild(container);
     
     card_container.appendChild(card);
-    // console.log(card_container);
+    
   }  
 }
 
-// add
 function getPicIndex(event) {
   
   let index = event.target.dataset.index;
   show(picDetail);
   hide(card_container);
-  // console.log(home)
-  // console.log(product[home].img)
+
   picDetail = document.getElementById("pic-detail");
   picDetail.remove();
   picDetail = document.createElement("div");
   picDetail.id = "pic-detail";
   picView.appendChild(picDetail);
-  // console.log(picDetail);
+  console.log(picDetail);
 
   let pic = product[index];
 
+  let div1 = document.createElement("div");
+  div1 .className = "div1";
+
   let picget = document.createElement("img");
+  picget .id = "setimg";
   picget.src = product[index].img;
-  picDetail.appendChild(picget);
-  // console.log(picget);
+  div1.appendChild(picget);
+
+  // new one
+  let backbtt = document.createElement("button");
+  backbtt.textContent = "Back";
+  backbtt .id = "backbtt";
+  backbtt.addEventListener("click", backbt)
+  div1.appendChild(backbtt);
 
   // add-more
   let div = document.createElement("div");
@@ -127,10 +131,16 @@ function getPicIndex(event) {
 
   let pridet = document.createElement("p");
   pridet .id = "pridet";
-  pridet.textContent = "Price: "+product[index].price;
+  pridet.textContent = "Price: "+product[index].price + product[index].currency;
   div.appendChild(pridet);
 
+  picDetail.appendChild(div1);
   picDetail.appendChild(div);
+}
+
+function backbt() {
+  hide(picDetail);
+  show(card_container);
 }
 
 function search_product(event) {

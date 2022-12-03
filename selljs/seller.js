@@ -1,10 +1,8 @@
-
-// DOMS ELEMENTS  ---------------------------------------------------------
+//Code
 const product_veiw = document.querySelector("#table");
 let add_product_form = document.getElementById("product-dialog");
 let product_container = document.getElementById("product-list");
 let createEditButton =document.getElementById("createEditButton");
-// add
 let pic_detail = document.getElementById("pic-detail");
 
 let productToedit = null;
@@ -44,6 +42,7 @@ function renderProduct(){
     let tr = document.createElement("tr");
     tr.dataset.index = index;
 
+
     let img =  document.createElement("img");
     img.src = pro.img;
     img.className = "img";
@@ -64,7 +63,9 @@ function renderProduct(){
 
     let td3 = document.createElement("td");
     td3.className = "button";
-
+   
+    
+    
     let deletebtt = document.createElement("button");
     deletebtt.id = "deletebtt";
     deletebtt.addEventListener("click", removebtt)
@@ -88,8 +89,6 @@ function renderProduct(){
   }
 }
 
-
-
 function Addproduct() {
   let pro = null;
   show(add_product_form);
@@ -97,7 +96,6 @@ function Addproduct() {
 
 function removebtt(event) {
   let index = event.target.parentElement.parentElement.dataset.index;
-  // console.log(index)
   product.splice(index, 1);
   saveProduct();
   renderProduct();
@@ -110,8 +108,6 @@ function Cancel(e) {
 
 function editButton(event) {
   productToedit = event.target.parentElement.parentElement.dataset.index;
-  // console.log(productToedit);
-
   let editpro = product[productToedit];
 
   document.getElementById("img").value = editpro.img;
@@ -144,8 +140,17 @@ function Create() {
   newproduct.currency = document.getElementById("currency").value;
   
   product.push(newproduct);
-
+  clearform();
  }
+
+ function clearform(){
+  document.getElementById("img").value = "";
+  document.getElementById("proname").value = "";
+  document.getElementById("description").value = "";
+  document.getElementById("price").value = "";
+  document.getElementById("currency").value = "";
+
+}
 
  let byname = product.sort((a, b) => {
   if (a.name < b.name) return -1;
@@ -162,12 +167,11 @@ function get() {
   renderProduct();
 }
 
-
 saveProduct();
 loadProduct();
 renderProduct();
 
-// console.log(product)
+
 
 
 

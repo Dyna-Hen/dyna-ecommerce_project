@@ -1,7 +1,7 @@
 body{
     padding: 0;
     margin: 0;
-    height: 400vh;
+    height: 100vh;
 }
 nav{
     background-color:  rgb(196, 73, 73);
@@ -79,16 +79,68 @@ tr{
 input[type=number] {
     padding: 12px;
     width: 94%;
-  }
+}
 dialog{
     width: 30%;
     border: 3px solid rgb(174, 32, 32);
-  }
-  menu{
+}
+menu{
     display: flex;
     justify-content: space-between;
-  }
-  .title{
+}
+.title{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(160, 24, 24);
+}
+
+/* add */
+.icon .fa {
+    color: rgb(70, 169, 169);
+  }
+  
+  .footer {
+    background-color: rgb(196, 73, 73);
+    padding: 50px 0px;
+    color: white;
+  }
+  .footer .container {
+    max-width: 1170px;
+    margin: auto;
+  }
+  .footer .row {
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer .row .footer-col {
+    width: 200px;
+    padding: 0px 15px;
+  }
+  .footer .row .footer-col h4 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 30px;
+  }
+  .footer .row .footer-col p {
+    margin-bottom: 15px;
+  }
+  .footer .row .footer-col li {
+    list-style: none;
+    margin-bottom: 15px;
+  }
+  .footer .row .footer-col li a {
+    text-decoration: none;
+    color: white;
+  }
+  .footer .row .footer-col li a:hover {
+    padding-left: 8px;
+  }
+  .footer .row .follow-us h4 {
+    margin-bottom: 30px;
+  }
+  .footer .row .follow-us .social-link {
+    width: 200px;
+    height: 50px;
+  }
+  .footer .row .follow-us .social-link .fa-square-instagram, .footer .row .follow-us .social-link .fa-square-facebook, .footer .row .follow-us .social-link .fa-square-snapchat, .footer .row .follow-us .social-link .fa-square-phone, .footer .row .follow-us .social-link .fa-square-twitter {
+    font-size: 30px;
   }
