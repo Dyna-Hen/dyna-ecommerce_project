@@ -25,13 +25,12 @@ form{
     text-align: center;
 }
 input[type=text]{
-    padding: 10px;
-    width: 95%;
+    padding: 12px;
+    width: 94%;
     margin: 10px 0px;
 }
 button{
    padding: 10px;
-   /* width: 30%; */
    border-radius: 20px;
    margin: 20px 0px 15px 0px;
    border: none;
@@ -52,12 +51,11 @@ button{
     background-color: rgb(206, 30, 101);
 }
 #createEditButton{
-    background-color: lightskyblue;
+    background-color: rgb(22, 116, 174);
 }
 #product-view{
-    margin-left: 50px;
+    margin: auto;
     width: 990px;
-    
 }
 #table{
     width: 100%;
@@ -76,5 +74,21 @@ tr{
     background-color: green;
 }
 #sortprice{
-    background-color: rgb(225, 86, 35);
+    background-color:white;
 }
+input[type=number] {
+    padding: 12px;
+    width: 94%;
+  }
+dialog{
+    width: 30%;
+    border: 3px solid rgb(174, 32, 32);
+  }
+  menu{
+    display: flex;
+    justify-content: space-between;
+  }
+  .title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(160, 24, 24);
+  }

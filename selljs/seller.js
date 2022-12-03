@@ -2,8 +2,10 @@
 // DOMS ELEMENTS  ---------------------------------------------------------
 const product_veiw = document.querySelector("#table");
 let add_product_form = document.getElementById("product-dialog");
-let product_container = document.getElementById('product-list');
+let product_container = document.getElementById("product-list");
 let createEditButton =document.getElementById("createEditButton");
+// add
+let pic_detail = document.getElementById("pic-detail");
 
 let productToedit = null;
 
@@ -36,7 +38,6 @@ function renderProduct(){
   newcontainer.id = "product-list";
   product_veiw.appendChild(newcontainer);
 
-
   for (let index = 0; index < product.length; index++){
     let pro = product[index];
 
@@ -46,7 +47,7 @@ function renderProduct(){
     let img =  document.createElement("img");
     img.src = pro.img;
     img.className = "img";
-
+   
     let td1 = document.createElement("td");
     td1.textContent = pro.name;
   
@@ -87,6 +88,8 @@ function renderProduct(){
   }
 }
 
+
+
 function Addproduct() {
   let pro = null;
   show(add_product_form);
@@ -94,7 +97,7 @@ function Addproduct() {
 
 function removebtt(event) {
   let index = event.target.parentElement.parentElement.dataset.index;
-  console.log(index)
+  // console.log(index)
   product.splice(index, 1);
   saveProduct();
   renderProduct();
@@ -107,6 +110,7 @@ function Cancel(e) {
 
 function editButton(event) {
   productToedit = event.target.parentElement.parentElement.dataset.index;
+  // console.log(productToedit);
 
   let editpro = product[productToedit];
 
@@ -159,18 +163,11 @@ function get() {
 }
 
 
-
-
-
-
-
-
-
 saveProduct();
 loadProduct();
 renderProduct();
 
-
+// console.log(product)
 
 
 

@@ -65,3 +65,19 @@ input{
   padding: 10px;
   /* margin-bottom: 5%; */
 }
+#pic-detail{
+  display: flex;
+  width: 80%;
+}
+dialog{
+  width: 50%;
+}
+.textcontainer{
+  margin-left: 50px;
+}
+#titledt{
+  font-size: 40px;
+}
+#info{
+  font-size: 35px;
+}

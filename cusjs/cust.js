@@ -8,8 +8,17 @@ function loadProduct() {
     product = itemStorage;
   }
 }
+function hide(element) {
+  element.style.display = "none";
+}
+function show(element) {
+  element.style.display = "block";
+}
 // saveProduct() 
 // loadProduct()
+
+let picView = document.getElementById("pic-view");
+let picDetail = document.getElementById("pic-detail");
 
 let product = [
   {
@@ -42,6 +51,10 @@ function render_product(){
     card .className = "card";
   
     let img = document.createElement("img");
+     // add
+    img.dataset.index = index;
+    img.addEventListener("click", getPicIndex);
+
     img.className = "img";
     img.src = p.img;
 
@@ -72,8 +85,52 @@ function render_product(){
     card.appendChild(container);
     
     card_container.appendChild(card);
-    console.log(card_container);
+    // console.log(card_container);
   }  
+}
+
+// add
+function getPicIndex(event) {
+  
+  let index = event.target.dataset.index;
+  show(picDetail);
+  hide(card_container);
+  // console.log(home)
+  // console.log(product[home].img)
+  picDetail = document.getElementById("pic-detail");
+  picDetail.remove();
+  picDetail = document.createElement("div");
+  picDetail.id = "pic-detail";
+  picView.appendChild(picDetail);
+  // console.log(picDetail);
+
+  let pic = product[index];
+
+  let picget = document.createElement("img");
+  picget.src = product[index].img;
+  picDetail.appendChild(picget);
+  // console.log(picget);
+
+  // add-more
+  let div = document.createElement("div");
+  div .className = "textcontainer";
+
+  let namedet = document.createElement("p");
+  namedet .id = "titledt";
+  namedet.textContent = product[index].name;
+  div.appendChild(namedet);
+
+  let info = document.createElement("p");
+  info .id = "info";
+  info.textContent = product[index].description;
+  div.appendChild(info);
+
+  let pridet = document.createElement("p");
+  pridet .id = "pridet";
+  pridet.textContent = "Price: "+product[index].price;
+  div.appendChild(pridet);
+
+  picDetail.appendChild(div);
 }
 
 function search_product(event) {
@@ -97,3 +154,4 @@ let search_product_input = document
 
 loadProduct();
 render_product();
+
