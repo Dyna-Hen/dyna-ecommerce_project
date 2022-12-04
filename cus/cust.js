@@ -35,7 +35,7 @@ let product = [
     price: 80,
   },
   {
-    img: "https://ibighit.com/txt/images/txt/discography/the_dream_chapter-s",
+    img: "https://ibighit.com/txt/images/txt/discography/minisode-2/tmp-cover.png",
     name: "DIMENSION",
     price: 55,
   },
