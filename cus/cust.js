@@ -27,9 +27,20 @@ let product = [
   {
     img: "https://i.scdn.co/image/ab67616d0000b2731c1ea5bfa5680ac877acdd55",
     name: "DIMENSION",
-    price: 78,
-  }
+    price: 55,
+  },
+  {
+    img: "https://purplekosmos.gumlet.io/wp-content/uploads/2022/01/txt_the_chaos_chapter_fight_or_escape_official_kpop_album.png?compress=true&quality=90&w=376&dpr=2.6",
+    name: "DIMENSION",
+    price: 80,
+  },
+  {
+    img: "https://ibighit.com/txt/images/txt/discography/the_dream_chapter-s",
+    name: "DIMENSION",
+    price: 55,
+  },
 ]
+
 function render_product(){
   loadProduct()
   saveProduct()
