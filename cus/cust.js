@@ -69,7 +69,7 @@ function render_product(){
     name_pro.textContent = p.name;
 
     let price = document.createElement("p");
-    price.textContent = p.price + p.currency;
+    price.textContent = p.price;
 
     let div_btt = document.createElement("div");
     div_btt.className = "divbtt";
