@@ -4,62 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seller</title>
-    <link rel="stylesheet" href="css-seller/seller.css">
+    <title>Customer</title>
+    <link rel="stylesheet" href="../css-cus/cus.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-  <nav>
-    <h3>LIST OF PRODUCT</h3>
-    <a href="index.html"><button id="display">Display</button></a>
-  </nav>
-  <div id="product-dialog" style="display: none">
-    <dialog open>
+    <div class="nav">
+        <div class="nav-left">
+            <div class="logo">
+                <a href="../index.html"><img src="../img/logo.png" alt="" width="25%"></a>
+                <!-- <img src="../img/logo.png" alt="" width="25%"></a> -->
+            </div>
+        </div>
+        <form action="" id="search-product">
+            <input type="text" id = "texttext" placeholder="Search product here..."/>
+          </form>
+    </div>
+    
+    <div id="allcard"></div>
 
-      <div class="title">Create new Product</div>
-
-        <label for="img">Image</label><br>
-        <input type="text" id="img"><br>
-
-        <label for="proname">Product Name</label><br>
-        <input type="text" id="proname"><br>
-
-        <label for="description">description</label><br>
-        <input type="text" id="description"><br>
-
-        <label for="price">Price</label><br>
-        <input type="text" id="price"><br>
-
-        <label for="currency">currency</label><br>
-        <input type="text" id="currency"><br>
-
-      <menu>
-        <button onclick="Cancel()" id="cancelBttColor">Cancel</button>
-        <button id="createEditButton" onclick="Create()">Create</button>
-      </menu>
-    </dialog>
-  </div>
-
-  <div id="product-view">
-    <button onclick="Addproduct()" id="addBttColor">Add Product</button>
-    <button class="sort-name" id="sortprice">sortprice</button>
-      <table style="border: 1px solid" id="table">
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Product name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Currency</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-      <tbody id="product-list">
-        
-      </tbody>
-    </table>
-  </div>
-  <div class="footer">
+    <div id="pic-view" >
+        <div id="pic-detail" style="display: none">
+            <dialog>
+                hj7i
+            </dialog> 
+        </div>
+    </div>
+    <div class="footer">
         <div class="container">
           <div class="row">
               <div class="footer-col">
@@ -96,5 +67,5 @@
       </div>
   </div>
 </body>
-<script src="selljs/seller.js"></script>
+<script defer src="cust.js"></script>
 </html>

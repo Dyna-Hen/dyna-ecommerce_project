@@ -20,19 +20,14 @@ let picDetail = document.getElementById("pic-detail");
 
 let product = [
   {
-  img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10b22412-a661-4e0e-8e62-848943016144/dbuj26x-c853f5f0-5fbd-4a78-b008-996fdcc2785a.jpg/v1/fill/w_1024,h_1024,q_75,strp/tata___bt21__by_the_jamless_one_dbuj26x-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzEwYjIyNDEyLWE2NjEtNGUwZS04ZTYyLTg0ODk0MzAxNjE0NFwvZGJ1ajI2eC1jODUzZjVmMC01ZmJkLTRhNzgtYjAwOC05OTZmZGNjMjc4NWEuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.6WRgTsJi9Isu94Au1HocYT54Dj134B-LM-GbrK3kShg",
-  name: "hoodie",
+  img: "https://ibighit.com/txt/images/txt/discography/minisode-2/tmp-cover.png",
+  name: "CHILD",
   price: 23,
   },
   {
-    img: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202211/185649e8-2d8f-4232-8911-5d0cc2a913ed-one_one.png?VersionId=FwlVvGfWTQMoM5FA9jdBkbnFKk2ab.wS",
-    name: "nono",
-    price: 500,
-  },
-  {
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY-aLYcDmb0Juce-6zFOaA5Ifbx452F6clh7K6xmGPXNil12c5VhrOLgtZy8Rj68VnaBw&usqp=CAU",
-    name: "lop",
-    price: 780,
+    img: "https://i.scdn.co/image/ab67616d0000b2731c1ea5bfa5680ac877acdd55",
+    name: "DIMENSION",
+    price: 78,
   }
 ]
 function render_product(){
